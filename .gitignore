@@ -1,0 +1,12 @@
+# Ambientes virtuais
+venv/
+.env
+
+# Dados e Banco (Ignora os arquivos, mas mantém as pastas se quiser)
+data/*.csv
+data/processed/*.csv
+data/*.db
+
+# Python
+__pycache__/
+*.pyc

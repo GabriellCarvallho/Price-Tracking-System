@@ -19,9 +19,10 @@ def salvar_no_banco(csv_path, db_path):
     conn = sqlite3.connect(db_path)
     
     # 3. Salvar os dados (Replace substitui a tabela se ela já existir)
+    # agora com o append, iremos adicionar novos dados sem apagar o antigo
     try:
-        df.to_sql('monitor_precos', conn, if_exists='replace', index=False)
-        logging.info(f"Sucesso! {len(df)} linhas inseridas no banco: {db_path}")
+        df.to_sql('monitor_precos', conn, if_exists='append', index=False)
+        logging.info(f"Sucesso! {len(df)} linhas inseridas ao historicos")
     except Exception as e:
         logging.error(f"Erro ao salvar no banco: {e}")
     finally:

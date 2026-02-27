@@ -30,8 +30,8 @@ def extrair_dados_livros(url):
         except ValueError:
             print(f"Erro ao converter preço do livro: {titulo}")
             continue # Pula para o próximo livro se este der erro
-        df_resultado = pd.DataFrame(lista_dados)
-        print(f"Total de livros coletados: {len(df_resultado)}")
+    df_resultado = pd.DataFrame(lista_dados)
+    print(f"Total de livros coletados: {len(df_resultado)}")
     return df_resultado
 
 if __name__ == "__main__":
